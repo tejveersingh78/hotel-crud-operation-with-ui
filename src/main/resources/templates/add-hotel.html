@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <h1>Hotel-crud-operation</h1>
+
+</head>
+    <h2>Add Hotel Detail</h2>
+<body>
+    <form method="POST" th:action="@{/hotels}" th:object="${hotel}">
+        <table>
+
+            <level>Id</level>
+            <input type="text" th:field="*{id}" readonly> <br><br>
+
+            <level>Code</level>
+            <input type="text" name="code" th:field="*{code}"> <br><br>
+
+            <level>Name</level>
+            <input type="text" name="name"  th:field="*{name}"> <br><br>
+
+            <level>Hotel Type</level>
+            <input type="text" name="hotelType" th:field="*{hotelType}"> <br><br>
+
+            <level>Email</level>
+            <input type="text" name="email" th:field="*{email}"> <br><br>
+
+            <level>Mobile</level>
+            <input type="text" name="mobile" th:field="*{mobile}"> <br><br>
+
+
+
+            <input type="submit" value="submit"><br>
+        </table>
+    </form>
+</body>
+</html>

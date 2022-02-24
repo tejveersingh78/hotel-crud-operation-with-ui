@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button style="background-color:Green;"><a href="/hotels">Add Hotel</a> </button>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <input type="text" name="searchText" th:value="${searchText}"  placeholder="search" class="form-control" required >
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-info" >Search</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table border="2px">
+        <thead style="background-color:yellow;">
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>HotelType</th>
+            <th>Email</th>
+            <th>Mobile</th>
+
+            <th>Action</th>
+            <th>Action</th>
+
+
+        </tr>
+        </thead>
+        <tbody  style="background-color:lightGreen;">
+        <tr th:each="hotel:${hotels}">
+
+            <td th:text="${hotel.id}"></td>
+            <td th:text="${hotel.code}"></td>
+            <td th:text="${hotel.name}"></td>
+            <td th:text="${hotel.hotelType}"></td>
+            <td th:text="${hotel.email}"></td>
+            <td th:text="${hotel.mobile}"></td>
+
+            <td>
+                <button style="background-color:light blue;">
+                    <a th:href="@{/hotels/{id} (id=${hotel.id})}">Edit</a>
+                </button>
+            </td>
+
+            <td>
+                <button style="background-color:light red;">
+                    <a th:href="@{/hotels/delete/{id} (id=${hotel.id})}">delete</a>
+                </button>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
