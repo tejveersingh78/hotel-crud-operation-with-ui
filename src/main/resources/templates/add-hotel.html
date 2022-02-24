@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <h1>Hotel-crud-operation</h1>
+    <h>Hotel-crud-operation</h>
 
 </head>
-    <h2>Add Hotel Detail</h2>
+
+    <h2> Add Hotel Detail</h2>
 <body>
     <form method="POST" th:action="@{/hotels}" th:object="${hotel}">
         <table>
 
-            <level>Id</level>
+            <level>Id :</level>
             <input type="text" th:field="*{id}" readonly> <br><br>
 
-            <level>Code</level>
+            <level>Code :</level>
             <input type="text" name="code" th:field="*{code}"> <br><br>
 
-            <level>Name</level>
+            <level>Name :</level>
             <input type="text" name="name"  th:field="*{name}"> <br><br>
 
-            <level>Hotel Type</level>
+            <level>Hotel Type :</level>
             <input type="text" name="hotelType" th:field="*{hotelType}"> <br><br>
 
-            <level>Email</level>
+            <level>Email :</level>
             <input type="text" name="email" th:field="*{email}"> <br><br>
 
-            <level>Mobile</level>
+            <level>Mobile :</level>
             <input type="text" name="mobile" th:field="*{mobile}"> <br><br>
 
 
